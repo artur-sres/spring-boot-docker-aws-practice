@@ -1,0 +1,9 @@
+$kind: http-request
+url: http://localhost:8080/produtos?nome=
+method: GET
+queryParams:
+  - key: nome
+    value: ""
+    disabled: false
+    description: ""
+order: 1892893144910094

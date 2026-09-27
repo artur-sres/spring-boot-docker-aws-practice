@@ -1,0 +1,16 @@
+$kind: http-request
+description: ""
+url: http://localhost:8080/produtos
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"nome\":\"Produto\",\r
+
+    \    \"descricao\":\"Descricao\",\r
+
+    \    \"valor\":0.00\r
+
+    }"
+order: 2000

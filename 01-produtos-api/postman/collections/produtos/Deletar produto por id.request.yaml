@@ -1,0 +1,6 @@
+$kind: http-request
+url: http://localhost:8080/produtos/:id
+method: DELETE
+pathVariables:
+  id: ""
+order: 4000

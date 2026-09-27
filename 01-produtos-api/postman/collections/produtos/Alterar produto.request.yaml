@@ -1,0 +1,20 @@
+$kind: http-request
+description: ""
+url: http://localhost:8080/produtos/:id
+method: PUT
+pathVariables:
+  - key: id
+    value: "6"
+    description: ""
+body:
+  type: json
+  content: "{\r
+
+    \    \"nome\":\"Produto\",\r
+
+    \    \"descricao\":\"Descricao\",\r
+
+    \    \"valor\":0.00\r
+
+    }"
+order: 1687
