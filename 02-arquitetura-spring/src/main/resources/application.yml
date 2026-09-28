@@ -9,4 +9,5 @@ spring:
   
 app:
   config:
-    variavel: X
+    variavel: valor da variavel X
+    valor1: 10
