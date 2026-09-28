@@ -3,9 +3,11 @@ package io.github.artur_sres.arquiteturaspring;
 import io.github.artur_sres.arquiteturaspring.montadora.TodoValidator;
 import io.github.artur_sres.arquiteturaspring.todos.TodoEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+@Lazy
 @Component
 @Scope("singleton")
 //@Scope("request")
