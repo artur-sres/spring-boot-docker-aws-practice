@@ -9,4 +9,5 @@ Cada pasta contém um projeto independente, geralmente focado em um conjunto esp
 ```text
 spring-boot-docker-aws-practice/
 ├── 01-produtos-api/
+├── 02-arquitetura-spring/
 └── README.md
