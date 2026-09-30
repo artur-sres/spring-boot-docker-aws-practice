@@ -9,7 +9,7 @@ SELECT *FROM autor;
 
 CREATE TABLE livro (
 	id UUID NOT NULL PRIMARY KEY,
-	isBm VARCHAR(50) NOT NULL,
+	isbm VARCHAR(50) NOT NULL,
 	titulo VARCHAR(150) NOT NULL,
 	data_publicacao DATE NOT NULL,
 	genero VARCHAR(30) NOT NULL,
