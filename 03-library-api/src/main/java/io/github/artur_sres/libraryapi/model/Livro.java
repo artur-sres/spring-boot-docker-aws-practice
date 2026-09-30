@@ -14,6 +14,7 @@ import java.util.UUID;
 @Data
 public class Livro {
 
+    @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -32,7 +33,7 @@ public class Livro {
     private GeneroLivro genero;
 
     @Column(name = "preco", precision = 18, scale = 2)
-    private double preco;
+    private BigDecimal preco;
 
     @JoinColumn(name = "id_autor")
     @ManyToOne
