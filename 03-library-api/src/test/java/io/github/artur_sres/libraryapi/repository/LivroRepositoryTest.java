@@ -1,7 +1,8 @@
-package io.github.artur_sres.libraryapi.model;
+package io.github.artur_sres.libraryapi.repository;
 
-import io.github.artur_sres.libraryapi.repository.AutorRepository;
-import io.github.artur_sres.libraryapi.repository.LivroRepository;
+import io.github.artur_sres.libraryapi.model.Autor;
+import io.github.artur_sres.libraryapi.model.GeneroLivro;
+import io.github.artur_sres.libraryapi.model.Livro;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,8 +14,7 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class LivroTest {
-
+class LivroRepositoryTest {
     @Autowired
     LivroRepository livroRepository;
 
@@ -26,18 +26,25 @@ class LivroTest {
         Livro livro = new Livro();
 
         livro.setIsbm("1234-1234");
-        livro.setTitulo("UFO");
+        livro.setTitulo("TESTE3");
         livro.setDataPublicacao(LocalDate.of(1980, 1, 1));
         livro.setGenero(GeneroLivro.FICÇÃO);
         livro.setPreco(BigDecimal.valueOf(100));
 
-        Autor autor = autorRepository
-                .findById(UUID.fromString("488bf000-caa7-4150-865e-6401de3c9d04"))
-                .orElse(null);
+//        Autor autor = autorRepository
+//                .findById(UUID.fromString("488bf000-caa7-4150-865e-6401de3c9d04"))
+//                .orElse(null);
+
+        Autor autor = new Autor();
+        autor.setNome("Antônio");
+        autor.setNacionalidade("Brasileiro");
+        autor.setDataNascimento(LocalDate.of(1989,10,11));
 
         livro.setAutor(autor);
 
         livroRepository.save(livro);
 
     }
+
+
 }
