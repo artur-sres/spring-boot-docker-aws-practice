@@ -2,6 +2,7 @@ package io.github.artur_sres.libraryapi.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.transaction.annotation.Transactional;
 
 
 import java.time.LocalDate;
@@ -27,6 +28,7 @@ public class Autor {
     @Column(name = "nacionalidade", length = 50, nullable = false)
     private String nacionalidade;
 
-    @OneToMany(mappedBy = "autor")
+    //@OneToMany(mappedBy = "autor")
+    @Transient
     private List<Livro> livros;
 }
