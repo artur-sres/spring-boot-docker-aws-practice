@@ -6,6 +6,7 @@ import io.github.artur_sres.libraryapi.model.Livro;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -46,5 +47,19 @@ class LivroRepositoryTest {
 
     }
 
+    @Test
+    @Transactional //Pode ser usado quando houver lazy initialization
+    public void buscarLivroTest(){
+        UUID id = UUID.fromString("66346554-03d8-417c-b8cf-ae1ed30d9a38");
+        Livro livro = livroRepository.findById(id).orElse(null);
+
+        if (livro == null){
+            System.out.println("Livro com esse ID não encontrado!");
+            return;
+        }
+        System.out.println(livro.getTitulo());
+        System.out.println(livro.getGenero());
+        System.out.println(livro.getPreco());
+    }
 
 }
