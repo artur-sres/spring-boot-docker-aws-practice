@@ -2,6 +2,7 @@ package io.github.artur_sres.libraryapi.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 import org.springframework.transaction.annotation.Transactional;
 
 
@@ -12,6 +13,7 @@ import java.util.UUID;
 @Entity
 @Table(name = "autor", schema = "public")
 @Data
+@ToString(exclude = "livros")
 public class Autor {
 
     @Id
@@ -28,7 +30,8 @@ public class Autor {
     @Column(name = "nacionalidade", length = 50, nullable = false)
     private String nacionalidade;
 
-    //@OneToMany(mappedBy = "autor")
-    @Transient
+    @OneToMany(
+            mappedBy = "autor",
+            cascade = CascadeType.ALL)
     private List<Livro> livros;
 }
