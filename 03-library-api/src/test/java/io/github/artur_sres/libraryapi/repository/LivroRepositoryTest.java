@@ -6,13 +6,12 @@ import io.github.artur_sres.libraryapi.model.Livro;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Sort;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.UUID;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class LivroRepositoryTest {
@@ -60,6 +59,25 @@ class LivroRepositoryTest {
         System.out.println(livro.getTitulo());
         System.out.println(livro.getGenero());
         System.out.println(livro.getPreco());
+    }
+
+    @Test
+    public void listarTodosLivrosQueryMethod(){
+        System.out.println(livroRepository.listarTodos());
+
+    }
+
+    @Test
+    public void listarByGeneroTest(){
+        System.out.println(livroRepository.findByGenero(
+                GeneroLivro.BIOGRAFIA,
+                Sort.by("dataPublicacao")
+        ));
+    }
+
+    @Test
+    public void deleteByGeneroTest(){
+        livroRepository.deleteByGenero(GeneroLivro.BIOGRAFIA);
     }
 
 }
