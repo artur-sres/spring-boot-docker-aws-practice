@@ -1,6 +1,6 @@
 # Arquitetura Spring
 
-Praticar a estruturação de aplicações Spring Boot e compreender os principais conceitos relacionados à arquitetura, componentes e injeção de dependências.
+Pequenos scripts usados somente para entender a estruturação de aplicações Spring Boot e compreender os principais conceitos relacionados à arquitetura, componentes e injeção de dependências.
 ## Conteúdos
 
 - Funcionamento do Spring Boot
